@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSZVCKYMT0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CSZVCKYMT0');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1278,7 +1269,6 @@
         .opportunity-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
         .opportunity-card p { font-size: 0.9rem; color: var(--light-300); line-height: 1.7; }
 
-        /* ===== MARKET SECTION - NUOVA ===== */
         .market {
             background: var(--dark);
             position: relative;
@@ -1466,6 +1456,414 @@
         }
 
         .market-footer-note strong { color: var(--sicily-gold); }
+
+        /* ===== RISULTATI REALI - DATI MODICAAI ===== */
+        .results {
+            background: var(--dark-800);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px; height: 1000px;
+            background: var(--sicily-gold);
+            filter: blur(300px);
+            opacity: 0.04;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .results-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .results-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .result-metric {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            padding: 28px 20px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-metric::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gradient-sicily);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .result-metric:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(232, 176, 75, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .result-metric:hover::before { opacity: 1; }
+
+        .result-metric-icon {
+            width: 48px; height: 48px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin: 0 auto 14px;
+            background: rgba(232, 176, 75, 0.12);
+            color: var(--sicily-gold);
+        }
+
+        .result-metric:nth-child(2) .result-metric-icon { background: rgba(16, 185, 129, 0.15); color: var(--success); }
+        .result-metric:nth-child(3) .result-metric-icon { background: rgba(6, 182, 212, 0.15); color: var(--secondary-light); }
+        .result-metric:nth-child(4) .result-metric-icon { background: rgba(108, 58, 237, 0.15); color: var(--primary-light); }
+
+        .result-metric-value {
+            font-size: 2.3rem;
+            font-weight: 900;
+            background: var(--gradient-sicily);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .result-metric-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+
+        .result-metric-desc {
+            font-size: 0.75rem;
+            color: var(--light-400);
+            line-height: 1.4;
+        }
+
+        .results-traffic {
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .results-traffic-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .results-traffic-title i {
+            color: var(--sicily-gold);
+            font-size: 1.2rem;
+        }
+
+        .traffic-source {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: var(--transition);
+        }
+
+        .traffic-source:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(232, 176, 75, 0.25);
+        }
+
+        .traffic-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+
+        .traffic-icon {
+            width: 44px; height: 44px;
+            min-width: 44px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .traffic-icon.google { background: rgba(66, 133, 244, 0.15); color: #4285F4; }
+        .traffic-icon.chatgpt { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+        .traffic-icon.direct { background: rgba(232, 176, 75, 0.15); color: var(--sicily-gold); }
+
+        .traffic-info { flex: 1; }
+
+        .traffic-info h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            margin: 0 0 2px 0;
+        }
+
+        .traffic-value {
+            font-size: 0.8rem;
+            color: var(--light-400);
+            font-weight: 500;
+        }
+
+        .traffic-percentage {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--sicily-gold);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .traffic-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 14px;
+        }
+
+        .traffic-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .traffic-fill.google { background: linear-gradient(90deg, #4285F4, #34A853); }
+        .traffic-fill.chatgpt { background: linear-gradient(90deg, #10B981, #34D399); }
+        .traffic-fill.direct { background: linear-gradient(90deg, #E8B04B, #FCD34D); }
+
+        .traffic-desc {
+            font-size: 0.85rem;
+            color: var(--light-300);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .traffic-desc strong { color: white; font-weight: 700; }
+        .traffic-desc em { color: var(--sicily-gold); font-style: normal; font-weight: 600; }
+
+        .results-pages {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .results-pages-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .results-pages-title i { color: var(--sicily-gold); }
+
+        .results-pages-subtitle {
+            font-size: 0.9rem;
+            color: var(--light-400);
+            margin: 0 0 24px 0;
+        }
+
+        .pages-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .page-item {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 16px;
+            align-items: center;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+
+        .page-item:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(232, 176, 75, 0.25);
+            transform: translateX(4px);
+        }
+
+        .page-rank {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: rgba(232, 176, 75, 0.12);
+            color: var(--sicily-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .page-item:nth-child(1) .page-rank {
+            background: linear-gradient(135deg, #E8B04B, #D97706);
+            color: var(--dark);
+        }
+
+        .page-info { min-width: 0; }
+
+        .page-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .page-meta {
+            font-size: 0.75rem;
+            color: var(--light-400);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .page-bounce {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--success);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .results-geo {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .results-geo-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+            margin: 0 0 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .results-geo-title i { color: var(--sicily-gold); }
+
+        .geo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .geo-item {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-md);
+            padding: 14px 16px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .geo-item:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(232, 176, 75, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .geo-item.highlight {
+            background: rgba(232, 176, 75, 0.08);
+            border-color: rgba(232, 176, 75, 0.25);
+        }
+
+        .geo-city {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .geo-count {
+            font-size: 0.8rem;
+            color: var(--sicily-gold);
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .geo-note {
+            font-size: 0.85rem;
+            color: var(--light-300);
+            line-height: 1.6;
+            margin: 0;
+            text-align: center;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .geo-note strong { color: var(--sicily-gold); }
+
+        .results-proof {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .proof-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .proof-badge i { font-size: 1.1rem; }
 
         .faq { background: var(--dark); }
         .faq .container { max-width: 850px; }
@@ -1953,7 +2351,12 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .market-stats {
+            .market-stats,
+            .results-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .geo-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -2000,7 +2403,12 @@
             .opportunity-grid,
             .steps-container,
             .market-stats,
-            .market-insights {
+            .market-insights,
+            .results-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .geo-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -2016,6 +2424,27 @@
             .cookie-banner-buttons { justify-content: flex-start; }
             .modal-body { padding: 24px; }
             .modal-header { padding: 20px 24px; }
+
+            .traffic-header { flex-wrap: wrap; }
+            .traffic-percentage { margin-left: auto; }
+
+            .page-item {
+                grid-template-columns: auto 1fr;
+                gap: 12px;
+            }
+
+            .page-bounce {
+                grid-column: 2;
+                justify-self: start;
+                font-size: 0.75rem;
+            }
+
+            .page-title { white-space: normal; }
+
+            .results-pages,
+            .results-geo {
+                padding: 24px 20px;
+            }
         }
 
         #particles-canvas {
@@ -2044,6 +2473,7 @@
                 <li><a href="#tech" onclick="closeMenu()">Tecnologia</a></li>
                 <li><a href="#how" onclick="closeMenu()">Come Funziona</a></li>
                 <li><a href="#market" onclick="closeMenu()">Mercato</a></li>
+                <li><a href="#results" onclick="closeMenu()">Dati Reali</a></li>
                 <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
             </ul>
 
@@ -2517,7 +2947,6 @@
             </div>
         </section>
 
-        <!-- ===== NUOVA SEZIONE: POTENZIALE ECONOMICO ===== -->
         <section class="market section" id="market" aria-labelledby="market-title">
             <div class="container">
                 <div class="market-header">
@@ -2621,6 +3050,215 @@
 
                 <div class="market-footer-note reveal">
                     <strong>Nota di trasparenza:</strong> Tutti i dati riportati provengono da fonti pubbliche e verificabili (ISTAT, Banca d'Italia, Statista, Juniper Research, Google Travel, Unioncamere). Le proiezioni di crescita sono stime di settore e i risultati effettivi del singolo franchisee dipendono dall'impegno personale, dalla città assegnata e dalla strategia commerciale adottata. AISicily non garantisce ricavi specifici.
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RISULTATI REALI - DATI MODICAAI ===== -->
+        <section class="results section" id="results" aria-labelledby="results-title">
+            <div class="container">
+                <div class="results-header">
+                    <span class="section-label gold reveal"><i class="fas fa-circle" aria-hidden="true"></i> Dati Reali · Marzo–Giugno 2026</span>
+                    <h2 class="section-title reveal reveal-delay-1" id="results-title">
+                        Sogno? No.<br>
+                        <span class="gradient-gold">Già Realtà.</span>
+                    </h2>
+                    <p class="section-subtitle reveal reveal-delay-2">
+                        ModicaAI è online e genera traffico reale. Questi sono i dati veri degli ultimi 3 mesi, direttamente da Google Analytics. Senza filtri, senza ritocchi.
+                    </p>
+                </div>
+
+                <div class="results-metrics">
+                    <div class="result-metric reveal reveal-delay-1">
+                        <div class="result-metric-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+                        <div class="result-metric-value">3,3K</div>
+                        <div class="result-metric-label">Utenti Attivi</div>
+                        <div class="result-metric-desc">Utenti unici che hanno interagito con ModicaAI</div>
+                    </div>
+
+                    <div class="result-metric reveal reveal-delay-2">
+                        <div class="result-metric-icon" aria-hidden="true"><i class="fas fa-user-plus"></i></div>
+                        <div class="result-metric-value">100%</div>
+                        <div class="result-metric-label">Utenti Nuovi</div>
+                        <div class="result-metric-desc">Tutti nuovi utenti che scoprono il servizio</div>
+                    </div>
+
+                    <div class="result-metric reveal reveal-delay-3">
+                        <div class="result-metric-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
+                        <div class="result-metric-value">50s</div>
+                        <div class="result-metric-label">Coinvolgimento Medio</div>
+                        <div class="result-metric-desc">Tempo medio di interazione per utente attivo</div>
+                    </div>
+
+                    <div class="result-metric reveal reveal-delay-4">
+                        <div class="result-metric-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+                        <div class="result-metric-value">20K</div>
+                        <div class="result-metric-label">Eventi Totali</div>
+                        <div class="result-metric-desc">Interazioni, click e azioni compiute dagli utenti</div>
+                    </div>
+                </div>
+
+                <div class="results-traffic">
+                    <h3 class="results-traffic-title reveal">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        Da Dove Arrivano gli Utenti
+                    </h3>
+
+                    <div class="traffic-source reveal reveal-delay-1">
+                        <div class="traffic-header">
+                            <div class="traffic-icon google" aria-hidden="true"><i class="fab fa-google"></i></div>
+                            <div class="traffic-info">
+                                <h3>Google Organico</h3>
+                                <div class="traffic-value">2.200 utenti · Primo motore di traffico</div>
+                            </div>
+                            <div class="traffic-percentage">67%</div>
+                        </div>
+                        <div class="traffic-bar">
+                            <div class="traffic-fill google" style="width: 67%"></div>
+                        </div>
+                        <p class="traffic-desc">
+                            <strong>SEO che funziona.</strong> ModicaAI appare nei primi risultati per query come 
+                            <em>"cosa vedere a Modica"</em>, <em>"eventi Modica"</em>, <em>"parcheggi Modica"</em>, 
+                            <em>"Frecce Tricolori Noto"</em>. Traffico qualificato, gratuito e costante — senza spendere un euro in ads.
+                        </p>
+                    </div>
+
+                    <div class="traffic-source reveal reveal-delay-2">
+                        <div class="traffic-header">
+                            <div class="traffic-icon chatgpt" aria-hidden="true"><i class="fas fa-robot"></i></div>
+                            <div class="traffic-info">
+                                <h3>ChatGPT Referral</h3>
+                                <div class="traffic-value">50+ utenti · Canale emergente AI-driven</div>
+                            </div>
+                            <div class="traffic-percentage">1,5%</div>
+                        </div>
+                        <div class="traffic-bar">
+                            <div class="traffic-fill chatgpt" style="width: 8%"></div>
+                        </div>
+                        <p class="traffic-desc">
+                            <strong>Il futuro è già qui.</strong> Quando gli utenti chiedono a ChatGPT informazioni su Modica, 
+                            l'AI suggerisce direttamente ModicaAI. È la prova che gli assistenti AI territoriali diventano 
+                            <strong>fonti referenziate dai grandi LLM</strong> — un vantaggio competitivo enorme.
+                        </p>
+                    </div>
+
+                    <div class="traffic-source reveal reveal-delay-3">
+                        <div class="traffic-header">
+                            <div class="traffic-icon direct" aria-hidden="true"><i class="fas fa-globe"></i></div>
+                            <div class="traffic-info">
+                                <h3>Traffico Diretto + Social</h3>
+                                <div class="traffic-value">660+ utenti · Passaparola digitale</div>
+                            </div>
+                            <div class="traffic-percentage">20%</div>
+                        </div>
+                        <div class="traffic-bar">
+                            <div class="traffic-fill direct" style="width: 20%"></div>
+                        </div>
+                        <p class="traffic-desc">
+                            <strong>Brand recognition in crescita.</strong> Utenti che tornano direttamente, 
+                            condivisioni da Facebook e Instagram, passaparola. Segno che il progetto si sta affermando 
+                            come punto di riferimento per informazioni sulla città.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="results-pages reveal">
+                    <h3 class="results-pages-title">
+                        <i class="fas fa-fire" aria-hidden="true"></i>
+                        Le Pagine Più Richieste
+                    </h3>
+                    <p class="results-pages-subtitle">Cosa cercano davvero gli utenti? I dati parlano chiaro.</p>
+                    
+                    <div class="pages-grid">
+                        <div class="page-item">
+                            <div class="page-rank">1</div>
+                            <div class="page-info">
+                                <div class="page-title">ModicaAI — Assistente AI Gratuito</div>
+                                <div class="page-meta">2.200 utenti · 7,2K eventi</div>
+                            </div>
+                            <div class="page-bounce">38,2%</div>
+                        </div>
+                        <div class="page-item">
+                            <div class="page-rank">2</div>
+                            <div class="page-info">
+                                <div class="page-title">Eventi a Modica 2026: Sagre e Feste</div>
+                                <div class="page-meta">681 utenti · 2,2K eventi</div>
+                            </div>
+                            <div class="page-bounce">48,4%</div>
+                        </div>
+                        <div class="page-item">
+                            <div class="page-rank">3</div>
+                            <div class="page-info">
+                                <div class="page-title">Frecce Tricolori a Noto 2026</div>
+                                <div class="page-meta">506 utenti · 1,7K eventi</div>
+                            </div>
+                            <div class="page-bounce">53,4%</div>
+                        </div>
+                        <div class="page-item">
+                            <div class="page-rank">4</div>
+                            <div class="page-info">
+                                <div class="page-title">Treno del Barocco 2026: Date e Biglietti</div>
+                                <div class="page-meta">301 utenti · 960 eventi</div>
+                            </div>
+                            <div class="page-bounce">48,2%</div>
+                        </div>
+                        <div class="page-item">
+                            <div class="page-rank">5</div>
+                            <div class="page-info">
+                                <div class="page-title">Dove Parcheggiare a Modica</div>
+                                <div class="page-meta">169 utenti · 519 eventi</div>
+                            </div>
+                            <div class="page-bounce">61,7%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-geo reveal">
+                    <h3 class="results-geo-title">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        Interesse Nazionale, Radicamento Territoriale
+                    </h3>
+                    <div class="geo-grid">
+                        <div class="geo-item">
+                            <div class="geo-city">Milano</div>
+                            <div class="geo-count">539 utenti</div>
+                        </div>
+                        <div class="geo-item">
+                            <div class="geo-city">Roma</div>
+                            <div class="geo-count">406 utenti</div>
+                        </div>
+                        <div class="geo-item highlight">
+                            <div class="geo-city">Modica</div>
+                            <div class="geo-count">293 utenti</div>
+                        </div>
+                        <div class="geo-item highlight">
+                            <div class="geo-city">Catania</div>
+                            <div class="geo-count">275 utenti</div>
+                        </div>
+                        <div class="geo-item highlight">
+                            <div class="geo-city">Palermo</div>
+                            <div class="geo-count">205 utenti</div>
+                        </div>
+                        <div class="geo-item highlight">
+                            <div class="geo-city">Ragusa</div>
+                            <div class="geo-count">70 utenti</div>
+                        </div>
+                        <div class="geo-item highlight">
+                            <div class="geo-city">Siracusa</div>
+                            <div class="geo-count">53 utenti</div>
+                        </div>
+                    </div>
+                    <p class="geo-note">
+                        <strong>Il messaggio è chiaro:</strong> il modello funziona sia a livello locale (cittadini e turisti sul posto) 
+                        sia a livello nazionale (italiani che pianificano viaggi in Sicilia).
+                    </p>
+                </div>
+
+                <div class="results-proof reveal">
+                    <div class="proof-badge">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Progetto già operativo e validato dal mercato · Dati Google Analytics verificabili</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2874,6 +3512,7 @@
                         <li><a href="#tech">Tecnologia</a></li>
                         <li><a href="#how">Come Funziona</a></li>
                         <li><a href="#market">Il Mercato</a></li>
+                        <li><a href="#results">Dati Reali</a></li>
                         <li><a href="https://modicaai.it" target="_blank" rel="noopener">Caso Studio: ModicaAI</a></li>
                     </ul>
                 </div>
